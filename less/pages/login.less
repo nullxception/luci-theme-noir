@@ -1,0 +1,122 @@
+.node-main-login {
+  .main {
+    top: 0;
+    height: 100%;
+  }
+
+  #modal_overlay {
+    top: 0;
+    background: #00000080;
+    backdrop-filter: unset;
+  }
+
+  #maincontent {
+    display: none;
+  }
+}
+
+.modal.login {
+  --success: #009a4c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  max-width: 360px;
+  padding: 0;
+  background: var(--background);
+  box-shadow: 0 0px 20px 8px #009a4c16;
+  backdrop-filter: blur(4px);
+
+  &.spinning {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+
+  form {
+    padding: 1rem 1.5rem;
+  }
+
+  &:has(> .spinning) form,
+  &:has(> .error) form {
+    padding-bottom: 0;
+  }
+
+  h4:empty {
+    display: none;
+  }
+
+  p {
+    font-family: monospace;
+    margin-left: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .message:after {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 0.5em;
+      animation: ellipsis 2s infinite;
+      content: "...";
+      word-break: normal;
+    }
+
+    @keyframes ellipsis {
+      from {
+        width: 2px;
+      }
+
+      to {
+        width: 2em;
+      }
+    }
+
+    .accented {
+      color: var(--success);
+    }
+  }
+
+  .credential {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+
+    label {
+      font-family: monospace;
+      flex-shrink: 0;
+    }
+
+    input {
+      font-family: monospace;
+      flex-grow: 1;
+      background: transparent;
+      border: none;
+      font-size: 13px !important;
+      padding: 0;
+      margin: 0;
+      color: var(--success);
+      height: unset;
+      box-shadow: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        color: var(--success);
+      }
+    }
+  }
+
+  .spinning {
+    margin: 1rem;
+  }
+}

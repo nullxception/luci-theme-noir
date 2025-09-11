@@ -1,0 +1,37 @@
+{% include('header') %}
+{%
+	const boardinfo = ubus.call("system", "board");
+	const hostname = striptags(boardinfo?.hostname ?? '?');
+%}
+<section hidden>
+	<form method="post" class="cbi-map">
+		<p class="banner">
+			<a href="https://github.com/openwrt/luci" target="_blank" rel="noreferrer">
+				<span class="accented">{{ split(version.luciname, ' ')[0] }}</span> 
+				{{ version.luciversion }}
+			</a> initialized
+			<span class="message">Logging into <span class="accented">{{ _(hostname) }}</span></span>
+		</p>
+		<div class="credential">
+			<label for="luci_username">user=</label>
+			<input name="luci_username" id="luci_username" type="text" autocomplete="username" value="{{ entityencode(duser, true) }}">
+		</div>
+		<div class="credential">
+			<label for="luci_username">pwd=</label>
+			<input name="luci_password" id="luci_password" type="password" autocomplete="current-password">
+		</div>
+	</form>
+		{% if (fuser): %}
+		<div class="alert-message error">
+			{{ _('Invalid credentials') }}
+		</div>
+		{% endif %}
+</section>
+
+<div class="modal login spinning">{{ _('Loading view…') }}</div>
+<script>
+	L.require('ui').then(function(ui) {
+		ui.instantiateView('noir.sysauth');
+	});
+</script>
+{% include('footer') %}

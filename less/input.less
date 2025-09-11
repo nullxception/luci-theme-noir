@@ -1,0 +1,67 @@
+input[type="checkbox"],
+input[type="radio"] {
+  --bd-color: var(--primary);
+  --fg-color: var(--on-background);
+
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  color: var(--fg-color);
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+input[type="checkbox"]::before,
+input[type="checkbox"]::after,
+input[type="radio"]::before,
+input[type="radio"]::after {
+  position: absolute;
+  content: "";
+}
+
+input[type="checkbox"]::before,
+input[type="radio"]::before {
+  top: 7px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--background);
+  border: 1px solid var(--bd-color);
+  border-radius: 2px;
+}
+
+input[type="radio"],
+input[type="radio"]::before {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]::after,
+input[type="radio"]::after {
+  top: 10px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+}
+
+input[type="checkbox"]:checked::after,
+input[type="radio"]:checked::after {
+  --checkmark-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path d='m2.5 7.4 7.5 7.5-2.5 2.4L0 10Zm15-5L20 4.9 7.5 17.3 5 15Z'/></svg>");
+  -webkit-mask: var(--checkmark-icon) center/cover no-repeat;
+  mask: var(--checkmark-icon) center/cover no-repeat;
+  background: var(--fg-color);
+}
+
+input[type="radio"]:checked:after {
+  --checkmark-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><circle cx='10' cy='10' r='7'/></svg>");
+}
+
+input[type="checkbox"].cbi-input-invalid,
+input[type="radio"].cbi-input-invalid {
+  --bd-color: var(--error);
+  --fg-color: var(--error);
+}

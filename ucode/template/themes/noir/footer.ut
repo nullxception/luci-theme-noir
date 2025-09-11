@@ -1,0 +1,14 @@
+{% if (ctx.authsession): %}
+			</div>
+		</div>
+		<footer>
+			<a href="https://github.com/openwrt/luci" target="_blank" rel="noreferrer">Powered by {{ version.luciname }} ({{ version.luciversion }})</a> /
+			{{ version.distname }} {{ version.distversion }} ({{ version.distrevision }})
+		</footer>
+	</div>
+
+	<script>L.require('menu-noir')</script>
+
+{% endif %}
+</body>
+</html>

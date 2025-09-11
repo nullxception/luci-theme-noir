@@ -1,0 +1,30 @@
+[data-page=""],
+.node-admin-status-overview {
+    #maincontent>.container {
+        >h2[name="content"] {
+            display: none;
+        }
+
+        #view {
+            background: unset;
+            padding: unset;
+            box-shadow: unset;
+            backdrop-filter: unset;
+
+            .cbi-section {
+                background: var(--surface);
+                backdrop-filter: blur(4px);
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+                border-radius: 6px;
+                padding: 1rem;
+            }
+        }
+    }
+
+    .spinning {
+        background: var(--surface);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+        border-radius: 6px;
+    }
+}

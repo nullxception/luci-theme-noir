@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    line-height: normal;
+}
+
+li {
+    list-style-type: none;
+}
+
+small {
+    font-size: 90%;
+    line-height: 1.42857143;
+    white-space: normal;
+}
+
+.heading() {
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0.35em 0;
+    color: inherit;
+    letter-spacing: -0.02em;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .heading();
+}
+
+.h1,
+h1 {
+    font-size: 2.25rem;
+}
+
+.h2,
+h2 {
+    font-size: 1.875rem;
+}
+
+.h3,
+h3 {
+    font-size: 1.5rem;
+}
+
+.h4,
+h4 {
+    font-size: 1.25rem;
+}
+
+.h5,
+h5 {
+    font-size: 1.125rem;
+}
+
+.h6,
+h6 {
+    font-size: 1rem;
+}
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-solid);
+    color: var(--on-background);
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 14px;
+}
+
+.btn,
+button,
+select,
+input,
+.cbi-dropdown {
+    min-height: 1.8rem;
+    padding: .3em 1em;
+    color: var(--on-surface);
+    border: 1px solid transparent;
+    border-radius: 0;
+    outline: 0;
+    background-color: var(--background-solid);
+    background-image: none;
+    box-shadow: none;
+    align-items: center;
+    box-shadow: 0 0 2px 0px rgb(255 255 255 / 25%);
+}
+
+select,
+.cbi-dropdown {
+    width: inherit;
+    cursor: default;
+}
+
+select:not([multiple="multiple"]):focus,
+input:not(.cbi-button):focus,
+.cbi-dropdown:focus {
+    border-color: var(--primary);
+}
+
+.cbi-dropdown,
+select[multiple="multiple"] {
+    height: auto;
+}
+
+pre {
+    overflow: auto;
+}
+
+code {
+    font-size: 1rem;
+    font-size-adjust: .35;
+    padding: 1px 3px;
+    border-radius: 2px;
+    background: var(--background);
+    color: var(--on-background);
+}
+
+textarea {
+    font-family: monospace;
+    width: 100%;
+    min-height: 14rem;
+    padding: .8rem;
+    background-color: var(--surface);
+    color: var(--on-surface);
+}
+
+abbr {
+    cursor: help;
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+a {
+    color: var(--primary-high);
+}
+
+hr {
+    margin: 1rem 0;
+    opacity: .1;
+    border-color: #eee;
+}

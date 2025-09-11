@@ -1,0 +1,22 @@
+{%
+	import { lsdir } from 'fs';
+	import { rand } from 'math';
+
+	const types = ["jpg", "jpeg", "png", "gif", "webp"];
+
+	let dir = media + "/backgrounds";
+	let wallpaper = dir + "/default.jpg";
+	let backgrounds = [];
+	for (i in (lsdir("/www" + dir))) {
+		let ext = split(i, '.');
+		ext = lc(ext?.[length(ext)-1] ?? "");
+		if (ext && index(types, ext) != -1) {
+			push(backgrounds, dir + "/" + i);
+		}
+	}
+
+	if (length(backgrounds) > 0) {
+		wallpaper =  backgrounds[(rand() % length(backgrounds))];
+	}
+%}
+<div class="wallpaper" style = "background-image:url({{ wallpaper }})"> </div>
