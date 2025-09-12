@@ -91,10 +91,7 @@ return baseclass.extend({
 		});
 
 		if (l == 1) {
-			var container = document.querySelector('#mainmenu');
-
-			container.appendChild(ul);
-			container.style.display = '';
+			document.querySelector('#mainmenu').appendChild(ul);
 		}
 
 		return ul;

@@ -43,7 +43,7 @@
 	</div>
 </header>
 <div class="main">
-	<div class="main-left" id="mainmenu" style="display:none">
+	<div class="main-left" id="mainmenu">
 		<a class="brand" href="{{ ctx.authsession ? dispatcher.build_url('admin/status/overview') : '#' }}">{{ hostname }}</a>
 	</div>
 	<div class="main-right">
